@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   cyrpess-electron-tests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: get code
         uses: actions/checkout@v4.2.2
