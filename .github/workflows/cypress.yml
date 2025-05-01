@@ -19,3 +19,13 @@ jobs:
 
       - name: Ruan E2E tests
         run: ${{github.event.inputs.cli}}
+        
+      - name: Upload Cypress Mochawesome report to GitHub Actions
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-report
+          path: cypress/reports
+
+      - name: View Cypress report
+        run: |
+          echo "See Cypress test report at: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts"
